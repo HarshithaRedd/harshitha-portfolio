@@ -4,8 +4,8 @@ export default function Navbar() {
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b border-white/5 bg-[#050505]/70 backdrop-blur-xl">
       <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-
-        {/* Left — Name */}
+        
+        {/* Left - Name */}
         <Link
           href="#top"
           className="text-sm font-semibold tracking-tight text-white transition hover:text-zinc-300"
@@ -13,7 +13,7 @@ export default function Navbar() {
           Harshitha G.
         </Link>
 
-        {/* Center — Desktop Navigation */}
+        {/* Center - Navigation */}
         <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
           <Link
             href="#work"
@@ -37,16 +37,17 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Right — Actions */}
+        {/* Right - Actions */}
         <div className="flex items-center gap-3">
-
-          {/* Download Resume */}
+          
+          {/* View Resume */}
           <a
             href="/resume.pdf"
-            download="Harshitha_Gangasani_Resume.pdf"
-            className="hidden rounded-full border border-white/15 px-5 py-2 text-sm text-zinc-300 transition hover:border-white/40 hover:text-white sm:inline-flex"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-full border border-white/15 px-5 py-2 text-sm text-zinc-300 transition hover:border-white/40 hover:bg-white/5 hover:text-white sm:inline-flex"
           >
-            Download Résumé
+            View Résumé
           </a>
 
           {/* Contact */}
@@ -58,7 +59,6 @@ export default function Navbar() {
           </Link>
 
         </div>
-
       </nav>
     </header>
   );
