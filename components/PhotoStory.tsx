@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 const photos = [
   {
-    src: "/images/life/photo-1.jpg",
+    src: "/images/life/photo-1.jpeg",
     alt: "A moment from life lately",
     caption: "Life, lately.",
   },

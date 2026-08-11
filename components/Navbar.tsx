@@ -37,13 +37,27 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Right — CTA */}
-        <Link
-          href="#contact"
-          className="rounded-full border border-white/15 px-5 py-2 text-sm text-white transition hover:border-white/40 hover:bg-white hover:text-black"
-        >
-          Let&apos;s Talk
-        </Link>
+        {/* Right — Actions */}
+        <div className="flex items-center gap-3">
+
+          {/* Download Resume */}
+          <a
+            href="/resume.pdf"
+            download="Harshitha_Gangasani_Resume.pdf"
+            className="hidden rounded-full border border-white/15 px-5 py-2 text-sm text-zinc-300 transition hover:border-white/40 hover:text-white sm:inline-flex"
+          >
+            Download Résumé
+          </a>
+
+          {/* Contact */}
+          <Link
+            href="#contact"
+            className="rounded-full bg-white px-5 py-2 text-sm font-medium text-black transition hover:bg-zinc-200"
+          >
+            Let&apos;s Talk
+          </Link>
+
+        </div>
 
       </nav>
     </header>
