@@ -5,195 +5,138 @@ import { motion } from "motion/react";
 const projects = [
   {
     number: "01",
-    type: "Fleet Analytics · Predictive Maintenance",
-    title: "Fleet Intelligence",
+    eyebrow: "Operational Analytics / Predictive Intelligence",
+    title: "FLEET\nINTELLIGENCE",
+    stat: "20%",
+    statLabel: "Downtime reduced",
     description:
-      "Built analytics and automation workflows around maintenance, telematics, work orders, and vehicle-trip data to help operations teams identify risk earlier and improve fleet performance.",
-    impact: [
-      "200K+ vehicle trips analyzed",
-      "20% reduction in downtime",
-      "30–60 day earlier risk identification",
-    ],
-    tools: [
-      "Python",
-      "SQL",
-      "XGBoost",
-      "FastAPI",
-      "Streamlit",
-      "Power BI",
-    ],
+      "Combined operational, maintenance, and vehicle-trip data to improve fleet visibility, identify repair risk, and support management decisions.",
+    tools:
+      "PYTHON / SQL / XGBOOST / FASTAPI / POWER BI",
   },
-
   {
     number: "02",
-    type: "Data Analytics · Cloud",
-    title: "Analytics at Scale",
+    eyebrow: "Product Analytics / Analytics Engineering",
+    title: "ANALYTICS\nAT SCALE",
+    stat: "10TB+",
+    statLabel: "Daily data processed",
     description:
-      "Developed analytics workflows across large order and fulfillment datasets, improving how product teams accessed reliable data for experimentation, forecasting, and operational decisions.",
-    impact: [
-      "10TB+ daily data",
-      "40% lower refresh latency",
-      "Analytics used across product workflows",
-    ],
-    tools: [
-      "SQL",
-      "Python",
-      "AWS",
-      "Snowflake",
-      "Databricks",
-      "dbt",
-      "Airflow",
-    ],
+      "Built analytics and reporting workflows across large-scale order and fulfillment data, improving refresh performance and supporting product, operational, and experimentation decisions.",
+    tools:
+      "SQL / PYTHON / SNOWFLAKE / DATABRICKS / DBT / AIRFLOW",
   },
-
   {
     number: "03",
-    type: "Forecasting · Experimentation",
-    title: "Demand Intelligence",
+    eyebrow: "Financial Analytics / Decision Support",
+    title: "FINANCIAL\nINTELLIGENCE",
+    stat: "22%",
+    statLabel: "Methane gas royalty",
     description:
-      "Applied forecasting, machine learning, and experimentation to understand promotional demand and customer behavior, helping improve predictions and support pricing decisions.",
-    impact: [
-      "18% improvement in forecast accuracy",
-      "12% increase in conversion",
-      "Statistical experiment analysis",
-    ],
-    tools: [
-      "Python",
-      "XGBoost",
-      "scikit-learn",
-      "SageMaker",
-      "Time Series",
-      "A/B Testing",
-    ],
+      "Analyzed fiscal-year actuals versus budget and forecast, performed variance and trend analysis across revenue, operating expenses, and capital spending, while supporting 22% royalty for methane gas production.",
+    tools:
+      "EXCEL / SQL / POWER BI / BUDGETING / FORECASTING / VARIANCE ANALYSIS",
   },
 ];
 
 export default function FeaturedWork() {
   return (
-    <section
-      id="work"
-      className="border-t border-white/10 px-6 py-28 md:py-36"
-    >
+    <section id="work" className="px-6 py-16 md:py-20">
       <div className="mx-auto max-w-7xl">
-
-        {/* Section Header */}
-        <div className="grid gap-8 md:grid-cols-[0.7fr_1.3fr]">
+        <div className="mb-10 flex items-end justify-between border-b border-white/10 pb-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.28em] text-zinc-500">
-              Selected Work
+            <p className="text-xs uppercase tracking-[0.28em] text-[#FF5A1F]">
+              03 / Selected Work
             </p>
-          </div>
 
-          <div>
-            <h2 className="max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.03em] text-white md:text-6xl">
-              Data work measured by
-              <span className="text-zinc-600"> what changed afterward.</span>
+            <h2 className="mt-4 text-4xl font-black tracking-[-0.04em] md:text-6xl">
+              DATA THAT
+              <br />
+              <span className="text-[#FF5A1F]">
+                MOVES DECISIONS.
+              </span>
             </h2>
-
-            <p className="mt-6 max-w-2xl leading-relaxed text-zinc-400">
-              A few examples of how I&apos;ve used analytics, automation, and
-              machine learning to solve operational and product problems.
-            </p>
           </div>
+
+          <span className="hidden text-xs uppercase tracking-[0.2em] text-zinc-700 md:block">
+            Selected / 03
+          </span>
         </div>
 
-        {/* Projects */}
-        <div className="mt-20 space-y-5">
-          {projects.map((project, index) => (
-            <motion.article
-              key={project.number}
-              initial={{
-                opacity: 0,
-                y: 35,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.18,
-              }}
-              transition={{
-                duration: 0.65,
-                delay: index * 0.08,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              whileHover={{
-                y: -5,
-              }}
-              className="group rounded-3xl border border-white/10 bg-zinc-950/40 p-7 transition duration-300 hover:border-white/25 md:p-10"
-            >
+        {projects.map((project, index) => (
+          <motion.article
+            key={project.number}
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: index * 0.08,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="group relative overflow-hidden border-b border-white/10 py-12 md:py-14"
+          >
+            <div className="pointer-events-none absolute right-0 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-[#FF5A1F]/0 blur-[110px] transition duration-500 group-hover:bg-[#FF5A1F]/10" />
 
-              {/* Top Row */}
-              <div className="flex items-start justify-between gap-6">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">
-                    {project.type}
-                  </p>
+            <div className="relative grid gap-8 md:grid-cols-[60px_1.25fr_0.75fr]">
+              <span className="text-xs text-[#FF5A1F]">
+                {project.number}
+              </span>
 
-                  <h3 className="mt-4 text-3xl font-medium tracking-tight text-white md:text-5xl">
-                    {project.title}
-                  </h3>
-                </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.22em] text-zinc-600">
+                  {project.eyebrow}
+                </p>
 
-                <p className="text-sm text-zinc-700">
-                  {project.number}
+                <motion.h3
+                  whileHover={{
+                    x: 7,
+                  }}
+                  transition={{
+                    duration: 0.25,
+                  }}
+                  className="mt-5 whitespace-pre-line text-4xl font-black leading-[0.9] tracking-[-0.05em] text-[#F1EDE5] md:text-6xl"
+                >
+                  {project.title}
+                </motion.h3>
+
+                <p className="mt-6 max-w-xl text-sm leading-6 text-zinc-500">
+                  {project.description}
+                </p>
+
+                <p className="mt-6 text-[10px] uppercase leading-5 tracking-[0.18em] text-zinc-700">
+                  {project.tools}
                 </p>
               </div>
 
-              {/* Main Content */}
-              <div className="mt-10 grid gap-10 md:grid-cols-[1fr_1fr]">
+              <div className="flex flex-col justify-end md:items-end md:text-right">
+                <motion.div
+                  whileHover={{
+                    scale: 1.05,
+                  }}
+                  transition={{
+                    duration: 0.25,
+                  }}
+                  className="text-5xl font-black tracking-[-0.06em] text-[#FF5A1F] md:text-7xl"
+                >
+                  {project.stat}
+                </motion.div>
 
-                {/* Description */}
-                <div>
-                  <p className="max-w-xl text-base leading-relaxed text-zinc-400 md:text-lg">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Impact */}
-                <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-600">
-                    Impact
-                  </p>
-
-                  <div className="mt-5 space-y-3">
-                    {project.impact.map((item) => (
-                      <div
-                        key={item}
-                        className="flex items-start gap-3 border-b border-white/5 pb-3 text-zinc-300"
-                      >
-                        <span className="mt-1 text-zinc-600">
-                          ↗
-                        </span>
-
-                        <p>
-                          {item}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
+                <p className="mt-2 text-xs uppercase tracking-[0.18em] text-zinc-600">
+                  {project.statLabel}
+                </p>
               </div>
-
-              {/* Tools */}
-              <div className="mt-10 flex flex-wrap gap-2 border-t border-white/10 pt-6">
-                {project.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-zinc-500 transition group-hover:border-white/20 group-hover:text-zinc-400"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-
-            </motion.article>
-          ))}
-        </div>
-
+            </div>
+          </motion.article>
+        ))}
       </div>
     </section>
   );

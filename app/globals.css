@@ -77,3 +77,33 @@ button,
 a {
   outline-offset: 4px;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #080808;
+  color: #f1ede5;
+}
+
+::selection {
+  background: #ff5a1f;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #272727;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5a1f;
+}

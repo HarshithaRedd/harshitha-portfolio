@@ -1,133 +1,179 @@
-const capabilities = [
-    {
-      number: "01",
-      title: "Analytics",
-      description:
-        "Turning messy operational and product data into metrics, insights, experiments, and decisions.",
-      skills: [
-        "SQL",
-        "Python",
-        "Power BI",
-        "Tableau",
-        "Product Analytics",
-        "A/B Testing",
-        "Statistical Analysis",
-      ],
-    },
-    {
-      number: "02",
-      title: "Automation & Data Apps",
-      description:
-        "Building workflows and lightweight applications that replace repetitive analytical and reporting work.",
-      skills: [
-        "Python Automation",
-        "FastAPI",
-        "Streamlit",
-        "APIs",
-        "ETL / ELT",
-        "Git",
-        "GitHub",
-      ],
-    },
-    {
-      number: "03",
-      title: "Data Platforms",
-      description:
-        "Working across cloud data pipelines, warehouses, transformation layers, and analytical data models.",
-      skills: [
-        "AWS",
-        "Azure",
-        "Snowflake",
-        "Databricks",
-        "dbt",
-        "Airflow",
-        "PostgreSQL",
-      ],
-    },
-    {
-      number: "04",
-      title: "Machine Learning & AI",
-      description:
-        "Applying predictive models today while exploring how LLMs and agents can automate increasingly complex analytical workflows.",
-      skills: [
-        "XGBoost",
-        "scikit-learn",
-        "Forecasting",
-        "Anomaly Detection",
-        "LLMs",
-        "AI Agents",
-        "RAG",
-      ],
-    },
-  ];
-  
-  export default function Capabilities() {
-    return (
-      <section className="border-t border-white/10 px-6 py-28 md:py-36">
-        <div className="mx-auto max-w-7xl">
-  
-          {/* Header */}
-          <div className="grid gap-8 md:grid-cols-[0.7fr_1.3fr]">
-            <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-zinc-500">
-                Capabilities
-              </p>
-            </div>
-  
-            <div>
-              <h2 className="max-w-4xl text-4xl font-semibold leading-tight tracking-[-0.03em] text-white md:text-6xl">
-                The tools change.
-                <span className="text-zinc-600">
-                  {" "}
-                  The problem-solving stays.
-                </span>
-              </h2>
-  
-              <p className="mt-6 max-w-2xl leading-relaxed text-zinc-400">
-                My work sits across analytics, automation, data platforms,
-                and increasingly intelligent systems.
-              </p>
-            </div>
+"use client";
+
+import { motion } from "motion/react";
+
+import {
+  SiPython,
+  SiGooglebigquery,
+  SiSnowflake,
+  SiDatabricks,
+  SiApacheairflow,
+  SiGooglecloud,
+  SiJira,
+  SiConfluence,
+} from "react-icons/si";
+
+import {
+  HiOutlineChartBar,
+  HiOutlineTableCells,
+  HiOutlineCircleStack,
+  HiOutlinePresentationChartBar,
+} from "react-icons/hi2";
+
+const logos = [
+  { icon: SiPython, label: "Python" },
+  { icon: HiOutlineChartBar, label: "Power BI" },
+  { icon: HiOutlineTableCells, label: "Excel" },
+  { icon: HiOutlinePresentationChartBar, label: "Tableau" },
+  { icon: HiOutlineChartBar, label: "Looker" },
+  { icon: SiGooglebigquery, label: "BigQuery" },
+  { icon: SiSnowflake, label: "Snowflake" },
+  { icon: SiDatabricks, label: "Databricks" },
+  { icon: HiOutlineCircleStack, label: "dbt" },
+  { icon: SiApacheairflow, label: "Apache Airflow" },
+  { icon: SiGooglecloud, label: "Google Cloud" },
+  { icon: SiJira, label: "Jira" },
+  { icon: SiConfluence, label: "Confluence" },
+];
+
+function LogoSet() {
+  return (
+    <>
+      {logos.map(({ icon: Icon, label }, index) => (
+        <motion.div
+          key={`${label}-${index}`}
+          whileHover={{
+            y: -6,
+            scale: 1.12,
+            color: "#FF5A1F",
+          }}
+          title={label}
+          aria-label={label}
+          className="mx-7 flex h-14 w-14 shrink-0 cursor-default items-center justify-center text-4xl text-zinc-500 transition-colors md:mx-10 md:h-16 md:w-16 md:text-5xl"
+        >
+          <Icon />
+        </motion.div>
+      ))}
+    </>
+  );
+}
+
+export default function Capabilities() {
+  return (
+    <section className="overflow-hidden py-16 md:py-20">
+      <div className="mx-auto max-w-7xl px-6">
+        <p className="text-xs uppercase tracking-[0.28em] text-[#FF5A1F]">
+          05 / Capabilities
+        </p>
+
+        <h2 className="mt-4 text-4xl font-black tracking-[-0.04em] text-[#F1EDE5] md:text-6xl">
+          THE TOOLS CHANGE.
+          <br />
+          <span className="text-zinc-600">
+            THE PROBLEM-SOLVING DOESN&apos;T.
+          </span>
+        </h2>
+      </div>
+
+      {/* Moving tool icons */}
+      <div className="mt-10 overflow-hidden border-y border-white/10 py-7">
+        <motion.div
+          animate={{
+            x: ["0%", "-50%"],
+          }}
+          transition={{
+            duration: 28,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="flex w-max items-center"
+        >
+          <div className="flex items-center">
+            <LogoSet />
           </div>
-  
-          {/* Capability Grid */}
-          <div className="mt-20 grid border-l border-t border-white/10 md:grid-cols-2">
-            {capabilities.map((capability) => (
-              <article
-                key={capability.number}
-                className="group border-b border-r border-white/10 p-7 transition duration-300 hover:bg-white/[0.02] md:p-10"
-              >
-                {/* Number */}
-                <p className="text-xs tracking-[0.2em] text-zinc-700">
-                  {capability.number}
-                </p>
-  
-                {/* Title */}
-                <h3 className="mt-8 text-2xl font-medium tracking-tight text-white md:text-3xl">
-                  {capability.title}
-                </h3>
-  
-                {/* Description */}
-                <p className="mt-5 max-w-xl leading-relaxed text-zinc-500">
-                  {capability.description}
-                </p>
-  
-                {/* Skills */}
-                <div className="mt-8 flex flex-wrap gap-2">
-                  {capability.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-zinc-500 transition group-hover:border-white/20 group-hover:text-zinc-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
+
+          <div className="flex items-center">
+            <LogoSet />
           </div>
-  
-        </div>
-      </section>
-    );
-  }
+        </motion.div>
+      </div>
+
+      {/* Core areas */}
+      <div className="mx-auto mt-8 flex max-w-7xl flex-wrap items-center gap-x-6 gap-y-3 px-6 text-xs uppercase tracking-[0.18em] text-zinc-600">
+        <span>Financial Analytics</span>
+        <span className="text-[#FF5A1F]">•</span>
+
+        <span>Analytics Engineering</span>
+        <span className="text-[#FF5A1F]">•</span>
+
+        <span>Cloud FinOps</span>
+        <span className="text-[#FF5A1F]">•</span>
+
+        <span>Business Intelligence</span>
+        <span className="text-[#FF5A1F]">•</span>
+
+        <span>Automation</span>
+      </div>
+
+      {/* Capability summary */}
+      <div className="mx-auto mt-8 grid max-w-7xl gap-6 px-6 sm:grid-cols-2 lg:grid-cols-4">
+        {[
+          {
+            title: "FINANCIAL ANALYTICS",
+            description:
+              "Forecasting · Variance · Profitability · Unit Economics · Excel",
+          },
+          {
+            title: "ANALYTICS ENGINEERING",
+            description:
+              "SQL · Data Models · Pipelines · dbt · Airflow",
+          },
+          {
+            title: "BI & DATA PLATFORMS",
+            description:
+              "Power BI · Tableau · Looker · BigQuery · Snowflake · Databricks",
+          },
+          {
+            title: "AUTOMATION & DELIVERY",
+            description:
+              "Python · APIs · ETL · Jira · Confluence · Workflow Automation",
+          },
+        ].map((item, index) => (
+          <motion.div
+            key={item.title}
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              delay: index * 0.08,
+            }}
+            whileHover={{
+              y: -5,
+            }}
+            className="group border-t border-white/10 pt-5"
+          >
+            <span className="text-xs text-[#FF5A1F]">
+              0{index + 1}
+            </span>
+
+            <h3 className="mt-3 text-sm font-black text-zinc-300 transition group-hover:text-[#FF5A1F]">
+              {item.title}
+            </h3>
+
+            <p className="mt-2 text-xs leading-5 text-zinc-600">
+              {item.description}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
